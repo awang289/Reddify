@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Reddify",
+  "version": "1.0",
+  "description": "My first Chrome extension.",
+  "browser_action": {
+    "default_icon": "thluffy.png",
+    "default_popup": "popup.html"
+  },
+  "background": {		
+    "scripts": ["background.js"],
+    "persistent": false
+    },
+   "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content.js"]
+    }],
+    "chrome_url_overrides" : {
+    "newtab": "newtab.html"
+}
+}
